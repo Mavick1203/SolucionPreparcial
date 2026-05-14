@@ -2,12 +2,11 @@ package co.edu.uniquindio;
 
 import co.edu.uniquindio.Composite.ElementoContenido;
 import co.edu.uniquindio.Composite.Playlist;
-import co.edu.uniquindio.Decorator.*;
+import co.edu.uniquindio.Decorator.IReproductor;
 import co.edu.uniquindio.FactoryMethod.AudiolibroFactory;
 import co.edu.uniquindio.FactoryMethod.CancionFactory;
 import co.edu.uniquindio.FactoryMethod.ContenidoFactory;
 import co.edu.uniquindio.FactoryMethod.PodcastFactory;
-import co.edu.uniquindio.Proxy.ProxyReproductor;
 import co.edu.uniquindio.Singleton.ReproductorGlobal;
 
 import static co.edu.uniquindio.Usuario.construirReproductor;
@@ -18,10 +17,10 @@ public class Main {
         //SINGLETON
         ReproductorGlobal global = ReproductorGlobal.getInstancia();
 
-        Usuario carolina = new Usuario("U2112", "Milton Miguel", Usuario.TipoSuscripcion.PREMIUM);
-        Usuario juan     = new Usuario("U1203", "Victor Hugo",     Usuario.TipoSuscripcion.FREE);
+        Usuario miltonMiguel = new Usuario("U2112", "Milton Miguel", Usuario.TipoSuscripcion.PREMIUM);
+        Usuario victorHugo = new Usuario("U1203", "Victor Hugo",     Usuario.TipoSuscripcion.FREE);
 
-        global.iniciarSesion(carolina);
+        global.iniciarSesion(miltonMiguel);
 
         //FACTORY METHOD
         ContenidoFactory cancionF    = new CancionFactory();
